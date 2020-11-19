@@ -13,10 +13,8 @@ spec:
       {{- include "counter-frontend.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-    {{- with .Values.podAnnotations }}
       annotations:
-        {{- toYaml . | nindent 8 }}
-    {{- end }}
+        timestamp: {{ dateInZone "2006-01-02 15:04:05Z" (now) "UTC"| quote }}
       labels:
         {{- include "counter-frontend.selectorLabels" . | nindent 8 }}
     spec:
