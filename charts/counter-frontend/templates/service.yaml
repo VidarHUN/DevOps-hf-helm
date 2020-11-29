@@ -7,10 +7,9 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: 4200
       nodePort: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: 4200
       protocol: TCP
-      name: http
   selector:
     {{- include "counter-frontend.selectorLabels" . | nindent 4 }}
