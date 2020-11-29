@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: brsbalazs/counter-frontend #vidarhun/devops-hf-frontend
+  repository: vidarhun/devops-hf-frontend
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
